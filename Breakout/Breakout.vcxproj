@@ -138,13 +138,27 @@
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="utility\ResourceManager.cpp" />
     <ClCompile Include="utility\shader\Shader.cpp" />
+    <ClCompile Include="utility\SpriteRenderer.cpp" />
     <ClCompile Include="utility\texture\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="utility\ResourceManager.h" />
     <ClInclude Include="utility\shader\Shader.h" />
+    <ClInclude Include="utility\SpriteRenderer.h" />
     <ClInclude Include="utility\texture\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Shader Include="utility/shader/shaders/*.vs">
+      <Filter>Shaders</Filter>
+    </Shader>
+    <Shader Include="utility/shader/shaders/*.frag">
+      <Filter>Shaders</Filter>
+    </Shader>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="utility\shader\shaders\sprite.frag" />
+    <None Include="utility\shader\shaders\sprite.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
