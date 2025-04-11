@@ -19,10 +19,10 @@ public:
     Game(unsigned int width, unsigned int height);
     ~Game();
 
-    void Init();
-    void ProcessInput(float dt);
-    void Update(float dt);
-    void Render();
+    void init();
+    void processInput(float dt);
+    void update(float dt);
+    void render();
 };
 
 #endif
