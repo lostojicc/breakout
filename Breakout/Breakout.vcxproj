@@ -139,6 +139,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="utility\CollisionHandler.cpp" />
     <ClCompile Include="utility\ResourceManager.cpp" />
     <ClCompile Include="utility\shader\Shader.cpp" />
     <ClCompile Include="utility\SpriteRenderer.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameLevel.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="utility\CollisionHandler.h" />
     <ClInclude Include="utility\ResourceManager.h" />
     <ClInclude Include="utility\shader\Shader.h" />
     <ClInclude Include="utility\SpriteRenderer.h" />

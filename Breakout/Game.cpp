@@ -55,6 +55,19 @@ void Game::init() {
 
 void Game::update(float dt) {
     ball->move(dt, this->width, this->height);
+    doCollisions();
+}
+
+void Game::doCollisions() {
+    for (GameObject& brick : this->levels[this->level].bricks) {
+        if (brick.isDestroyed)
+            continue;
+
+        if (CollisionHandler::checkCollision(ball, &brick)) {
+            if (!brick.isSolid)
+                brick.isDestroyed = true;
+        }
+    }
 }
 
 void Game::processInput(float dt) {

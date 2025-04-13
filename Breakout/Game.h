@@ -7,6 +7,7 @@
 
 #include "GameLevel.h"
 #include "BallObject.h"
+#include "utility/CollisionHandler.h"
 
 enum GameState {
     GAME_ACTIVE,
@@ -29,6 +30,8 @@ public:
     void processInput(float dt);
     void update(float dt);
     void render();
+private:
+    void doCollisions();
 };
 
 #endif
