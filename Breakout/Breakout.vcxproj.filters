@@ -45,6 +45,9 @@
     <ClCompile Include="GameLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BallObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -68,9 +71,12 @@
     <ClInclude Include="GameLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BallObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="utility\shader\shaders\sprite.frag" />
-    <None Include="utility\shader\shaders\sprite.vert" />
+    <None Include="shader\sprite.frag" />
+    <None Include="shader\sprite.vert" />
   </ItemGroup>
 </Project>

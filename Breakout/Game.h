@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 
 #include "GameLevel.h"
+#include "BallObject.h"
 
 enum GameState {
     GAME_ACTIVE,
