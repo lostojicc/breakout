@@ -134,6 +134,8 @@
   <ItemGroup>
     <ClCompile Include="Breakout.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLevel.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="utility\ResourceManager.cpp" />
@@ -143,6 +145,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameLevel.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="utility\ResourceManager.h" />
     <ClInclude Include="utility\shader\Shader.h" />
     <ClInclude Include="utility\SpriteRenderer.h" />
