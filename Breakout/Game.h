@@ -1,8 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <vector>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
+#include "GameLevel.h"
 
 enum GameState {
     GAME_ACTIVE,
@@ -15,6 +18,8 @@ public:
     GameState state;
     bool keys[1024];
     unsigned int width, height;
+    std::vector<GameLevel> levels;
+    unsigned int level;
 
     Game(unsigned int width, unsigned int height);
     ~Game();
