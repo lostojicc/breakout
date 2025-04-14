@@ -2,6 +2,7 @@
 #include "../GameObject.h"
 
 #include <vector>
+#include <tuple>
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 
@@ -14,7 +15,7 @@ enum Direction {
 
 class CollisionHandler {
 public:
-	static bool checkCollision(BallObject*, GameObject*);
+	static std::tuple<bool, Direction, glm::vec2> checkCollision(BallObject*, GameObject*);
 private:
-	// Direction getDirection(glm::vec2 target);
+	static Direction getDirection(glm::vec2 target);
 };

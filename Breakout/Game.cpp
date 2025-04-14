@@ -54,7 +54,7 @@ void Game::init() {
 }
 
 void Game::update(float dt) {
-    ball->move(dt, this->width, this->height);
+    ball->move(dt, this->width);
     doCollisions();
 }
 
@@ -63,10 +63,37 @@ void Game::doCollisions() {
         if (brick.isDestroyed)
             continue;
 
-        if (CollisionHandler::checkCollision(ball, &brick)) {
+        std::tuple<bool, Direction, glm::vec2> collision = CollisionHandler::checkCollision(ball, &brick);
+        if (std::get<0>(collision)) {
             if (!brick.isSolid)
                 brick.isDestroyed = true;
+
+            Direction dir = std::get<1>(collision);
+            glm::vec2 diff = std::get<2>(collision);
+
+            if (dir == LEFT || dir == RIGHT) {
+                ball->velocity.x = -ball->velocity.x;
+                float penetration = ball->radius - std::abs(diff.x);
+                ball->position.x += (dir == LEFT) ? penetration : -penetration;
+            } else {
+                ball->velocity.y = -ball->velocity.y;
+                float penetration = ball->radius - std::abs(diff.y);
+                ball->position.y += (dir == UP) ? penetration : -penetration;
+            }
         }
+    }
+
+    std::tuple<bool, Direction, glm::vec2> result = CollisionHandler::checkCollision(ball, player);
+    if (!ball->stuck && std::get<0>(result)) {
+        float centerBoard = player->position.x + player->size.x / 2.0f;
+        float distance = (ball->position.x + ball->radius) - centerBoard;
+        float percentage = distance / (player->size.x / 2.0f);
+
+        float strength = 2.0f;
+        glm::vec2 oldVelocity = ball->velocity;
+        ball->velocity.x = INITIAL_BALL_VELOCITY.x * percentage * strength;
+        ball->velocity.y = -1.0f * std::abs(ball->velocity.y);
+        ball->velocity = glm::normalize(ball->velocity) * glm::length(oldVelocity);
     }
 }
 
